@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=
+SOURCEFILES_QUOTED_IF_SPACED=main.c music.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=
-POSSIBLE_DEPFILES=
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/music.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/music.o.d
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/music.o
 
 # Source Files
-SOURCEFILES=
+SOURCEFILES=main.c music.c
 
 
 
@@ -94,7 +94,31 @@ MP_PROCESSOR_OPTION=ATmega324PB
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/a3515926bd856ab51b196f2e51558a1905b33b4 .generated_files/flags/default/87742f3ffd7809452c266948dce18837ae0cd724
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/main.o.d" -MT "${OBJECTDIR}/main.o.d" -MT ${OBJECTDIR}/main.o -o ${OBJECTDIR}/main.o main.c 
+	
+${OBJECTDIR}/music.o: music.c  .generated_files/flags/default/56c677ad4393c5247e533f1f42296e039fb0ff7e .generated_files/flags/default/87742f3ffd7809452c266948dce18837ae0cd724
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/music.o.d 
+	@${RM} ${OBJECTDIR}/music.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/music.o.d" -MT "${OBJECTDIR}/music.o.d" -MT ${OBJECTDIR}/music.o -o ${OBJECTDIR}/music.o music.c 
+	
 else
+${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/988de795271188a3653412242e77a3425bc75725 .generated_files/flags/default/87742f3ffd7809452c266948dce18837ae0cd724
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/main.o.d" -MT "${OBJECTDIR}/main.o.d" -MT ${OBJECTDIR}/main.o -o ${OBJECTDIR}/main.o main.c 
+	
+${OBJECTDIR}/music.o: music.c  .generated_files/flags/default/64ad6ca42bc8942cb32c76fc7e02c6399a71520a .generated_files/flags/default/87742f3ffd7809452c266948dce18837ae0cd724
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/music.o.d 
+	@${RM} ${OBJECTDIR}/music.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/music.o.d" -MT "${OBJECTDIR}/music.o.d" -MT ${OBJECTDIR}/music.o -o ${OBJECTDIR}/music.o music.c 
+	
 endif
 
 # ------------------------------------------------------------------------------------
